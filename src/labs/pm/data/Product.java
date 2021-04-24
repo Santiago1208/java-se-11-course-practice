@@ -43,6 +43,7 @@ public class Product {
     private int id;
     private String name;
     private BigDecimal price;
+    private Rating rating;
 
     public int getId() {
         return id;
@@ -66,6 +67,14 @@ public class Product {
 
     public void setPrice(final BigDecimal price) {
         this.price = price;
+    }
+
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
     }
     
     /**
