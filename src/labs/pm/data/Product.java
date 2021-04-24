@@ -17,12 +17,15 @@
 package labs.pm.data;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  *
  * @author Santiago
  */
 public class Product {
+    
+    public final static BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
     
     private int id;
     private String name;
@@ -48,10 +51,12 @@ public class Product {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(final BigDecimal price) {
         this.price = price;
     }
     
-    
+    public BigDecimal getDiscount() {
+        return price.multiply(DISCOUNT_RATE).setScale(2, RoundingMode.HALF_UP);
+    }
     
 }
